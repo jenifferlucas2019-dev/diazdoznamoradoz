@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dia dos Namorados ❤️</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg, #ff4e8a, #ff8fb1);
+      overflow:hidden;
+    }
+
+    .container{
+      background:white;
+      width:90%;
+      max-width:700px;
+      padding:40px;
+      border-radius:25px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,0.3);
+      position:relative;
+      animation: aparecer 1s ease;
+    }
+
+    h1{
+      color:#ff2e63;
+      font-size:3rem;
+      margin-bottom:20px;
+    }
+
+    p{
+      color:#444;
+      font-size:1.2rem;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .btn{
+      background:#ff2e63;
+      color:white;
+      border:none;
+      padding:15px 30px;
+      border-radius:50px;
+      font-size:1rem;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#ff004c;
+      transform:scale(1.1);
+    }
+
+    .heart{
+      position:absolute;
+      color:#ff2e63;
+      font-size:25px;
+      animation: subir 5s linear infinite;
+    }
+
+    @keyframes subir{
+      0%{
+        transform:translateY(100vh);
+        opacity:0;
+      }
+      100%{
+        transform:translateY(-120vh);
+        opacity:1;
+      }
+    }
+
+    @keyframes aparecer{
+      from{
+        transform:scale(0.7);
+        opacity:0;
+      }
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    .mensagem{
+      margin-top:20px;
+      color:#ff2e63;
+      font-size:1.4rem;
+      font-weight:bold;
+    }
+
+    img{
+      width:220px;
+      margin-bottom:20px;
+      animation: flutuar 2s infinite alternate;
+    }
+
+    @keyframes flutuar{
+      from{
+        transform:translateY(0);
+      }
+      to{
+        transform:translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Corações -->
+  <div class="heart" style="left:10%;">❤️</div>
+  <div class="heart" style="left:30%; animation-delay:1s;">💖</div>
+  <div class="heart" style="left:50%; animation-delay:2s;">💕</div>
+  <div class="heart" style="left:70%; animation-delay:3s;">❤️</div>
+  <div class="heart" style="left:90%; animation-delay:4s;">💘</div>
+
+  <div class="container">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Coração">
+
+    <h1>Feliz Dia dos Namorados ❤️</h1>
+
+    <p>
+      O amor é feito de pequenos momentos,
+      sorrisos sinceros e pessoas especiais.
+      Que esse dia seja cheio de carinho,
+      felicidade e muito amor!
+    </p>
+
+    <button class="btn" onclick="mostrarMensagem()">
+      Clique Aqui 💌
+    </button>
+
+    <div class="mensagem" id="mensagem"></div>
+
+  </div>
+
+  <script>
+    function mostrarMensagem(){
+      document.getElementById("mensagem").innerHTML =
+      "Você é uma pessoa muito especial ❤️";
+    }
+  </script>
+
+</body>
+</html>
