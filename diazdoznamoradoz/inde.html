@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Dia dos Namorados ❤️</title>
+</audio>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+header{
+    padding:50px 20px;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:1.2rem;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border-radius:20px;
+    padding:30px;
+    margin:20px;
+}
+
+.foto{
+    width:250px;
+    border-radius:20px;
+    margin:20px 0;
+    box-shadow:0 0 20px rgba(255,255,255,.4);
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    background:white;
+    color:#ff4f81;
+    font-weight:bold;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+#mensagem{
+    margin-top:20px;
+    font-size:1.3rem;
+    font-weight:bold;
+}
+
+footer{
+    margin-top:50px;
+    padding:20px;
+}
+
+.heart{
+    position:fixed;
+    color:red;
+    font-size:25px;
+    animation:cair 6s linear infinite;
+}
+
+@keyframes cair{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(100vh);
+    }
+}
+
+#contador{
+    font-size:1.5rem;
+    margin-top:15px;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+    <div id="carta" style="margin-top:20px;font-size:18px;"></div>
+</div>
+<header>
+    <div class="card">
+
+    <div id="carta" style="margin-top:20px;font-size:18px;"></div>
+</div>
+    <h1>❤️ Feliz Dia dos Namorados ❤️</h1>
+    <p>Um site feito com muito carinho para uma pessoa especial.</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Nossa História 💕</h2>
+        <p>
+            Cada momento ao seu lado é especial.
+            Seu sorriso ilumina meus dias e sua companhia
+            torna tudo melhor. Obrigado(a) por fazer parte
+            da minha vida.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Tempo Juntos ⏳</h2>
+        <div id="contador"></div>
+    </div>
+
+    <div class="card">
+        <h2>Mensagem Especial 💌</h2>
+        <button onclick="mostrarMensagem()">
+            Clique Aqui ❤️
+        </button>
+        <div id="mensagem"></div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Feito com ❤️ para o Dia dos Namorados</p>
+</footer>
+
+<script>
+function mostrarMensagem(){
+    document.getElementById("mensagem").innerHTML =
+    "Você é uma das melhores partes da minha vida. Feliz Dia dos Namorados! ❤️";
+}
+
+// Data do início do relacionamento
+const inicio = new Date("2025-01-01");
+
+function atualizarContador(){
+    const hoje = new Date();
+
+    const diferenca = hoje - inicio;
+
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+
+    document.getElementById("contador").innerHTML =
+    dias + " dias juntos ❤️";
+}
+
+setInterval(atualizarContador,1000);
+atualizarContador();
+
+// Corações caindo
+function criarCoracao(){
+    const coracao = document.createElement("div");
+    coracao.classList.add("heart");
+    coracao.innerHTML = "❤️";
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = (20 + Math.random()*20) + "px";
+
+    document.body.appendChild(coracao);
+
+    setTimeout(()=>{
+        coracao.remove();
+    },6000);
+}
+
+setInterval(criarCoracao,300);
+</script>
+
+</body>
+</html>
